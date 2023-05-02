@@ -4,12 +4,12 @@ using OpenQA.Selenium.Chrome;
 namespace BeerDrivenFrontend.Tests.StepDefinitions;
 
 [Binding]
-public class StartAppStepDefinition : IDisposable
+public class NavbarElementsLoadedStepDefinition : IDisposable
 {
 	private IWebDriver Driver { get; }
 	private const string Url = "https://beerblazor.azurewebsites.net/";
 
-	public StartAppStepDefinition()
+	public NavbarElementsLoadedStepDefinition()
 	{
 		var chromeOptions = new ChromeOptions();
 		chromeOptions.AddArguments("headless");
@@ -19,11 +19,15 @@ public class StartAppStepDefinition : IDisposable
 		Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 	}
 
-	[Then(@"The navbar is loaded")]
-	public void ThenTheNavbarIsLoaded()
+	[Then(@"The elements into navbar are successflully loaded")]
+	public void ThenTheElementsIntoNavbarAreSuccessflullyLoaded()
 	{
 		var navMenu = Driver.FindElement(By.Id("navmenu"));
-		Assert.True(navMenu != null);
+		var navMenuProductionItem = navMenu.FindElements(By.LinkText("Production"));
+		var navMenuPubsItem = navMenu.FindElements(By.LinkText("Pubs"));
+
+		Assert.True(navMenuProductionItem != null);
+		Assert.True(navMenuPubsItem != null);
 	}
 
 	#region Dispose
@@ -40,7 +44,7 @@ public class StartAppStepDefinition : IDisposable
 		GC.SuppressFinalize(this);
 	}
 
-	~StartAppStepDefinition()
+	~NavbarElementsLoadedStepDefinition()
 	{
 		Dispose(false);
 	}

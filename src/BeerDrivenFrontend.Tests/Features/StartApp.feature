@@ -1,4 +1,4 @@
-﻿Feature: Presentation Tests
+﻿Feature: Startup Tests
 
 A short summary of the feature
 

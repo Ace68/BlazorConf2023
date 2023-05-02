@@ -1,9 +1,9 @@
-﻿Feature: CreateSalesOrder
+﻿Feature: CreateSalesOrder Test
 
 A short summary of the feature
 
 @CreateSalesOrder
-Scenario: Create an Order for Sales
-	Given Input order parameters
-	When The Json is sent to Api
-	Then The order is created
+Scenario: Input data to create sales order
+	Given The user is on the sales order page
+	When The user enters the data
+	Then The sales order is created

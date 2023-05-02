@@ -2,7 +2,12 @@
 @using MudBlazor
 @using BeerDrivenFrontend.Modules.Pubs.Extensions.Dtos
 
-<MudTable Items="@Beers" Hover="true" @ref="MudTable" Striped="true" RowClassFunc="@SelectedRowClassFunc" OnRowClick="RowClickEvent" T="BeerJson">
+<MudTable Items="@Beers" Hover="true" 
+          @ref="MudTable" 
+          Striped="true" 
+          RowClassFunc="@SelectedRowClassFunc" 
+          OnRowClick="RowClickEvent" T="BeerJson"
+          id="pubs-grid">
 	<HeaderContent>
 		<MudTh>Beer Type</MudTh>
 		<MudTh>Quantity</MudTh>

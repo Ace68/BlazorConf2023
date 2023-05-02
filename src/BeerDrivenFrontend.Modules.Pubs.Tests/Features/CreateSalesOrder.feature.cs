@@ -19,7 +19,7 @@ namespace BeerDrivenFrontend.Modules.Pubs.Tests.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class CreateSalesOrderFeature : object, Xunit.IClassFixture<CreateSalesOrderFeature.FixtureData>, System.IDisposable
+    public partial class CreateSalesOrderTestFeature : object, Xunit.IClassFixture<CreateSalesOrderTestFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace BeerDrivenFrontend.Modules.Pubs.Tests.Features
 #line 1 "CreateSalesOrder.feature"
 #line hidden
         
-        public CreateSalesOrderFeature(CreateSalesOrderFeature.FixtureData fixtureData, BeerDrivenFrontend_Modules_Pubs_Tests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public CreateSalesOrderTestFeature(CreateSalesOrderTestFeature.FixtureData fixtureData, BeerDrivenFrontend_Modules_Pubs_Tests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace BeerDrivenFrontend.Modules.Pubs.Tests.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "CreateSalesOrder", "A short summary of the feature", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "CreateSalesOrder Test", "A short summary of the feature", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,16 +80,16 @@ namespace BeerDrivenFrontend.Modules.Pubs.Tests.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Create an Order for Sales")]
-        [Xunit.TraitAttribute("FeatureTitle", "CreateSalesOrder")]
-        [Xunit.TraitAttribute("Description", "Create an Order for Sales")]
+        [Xunit.SkippableFactAttribute(DisplayName="Input data to create sales order")]
+        [Xunit.TraitAttribute("FeatureTitle", "CreateSalesOrder Test")]
+        [Xunit.TraitAttribute("Description", "Input data to create sales order")]
         [Xunit.TraitAttribute("Category", "CreateSalesOrder")]
-        public void CreateAnOrderForSales()
+        public void InputDataToCreateSalesOrder()
         {
             string[] tagsOfScenario = new string[] {
                     "CreateSalesOrder"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an Order for Sales", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Input data to create sales order", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -101,13 +101,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
- testRunner.Given("Input order parameters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("The user is on the sales order page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.When("The Json is sent to Api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("The user enters the data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
- testRunner.Then("The order is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The sales order is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -120,12 +120,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                CreateSalesOrderFeature.FeatureSetup();
+                CreateSalesOrderTestFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                CreateSalesOrderFeature.FeatureTearDown();
+                CreateSalesOrderTestFeature.FeatureTearDown();
             }
         }
     }

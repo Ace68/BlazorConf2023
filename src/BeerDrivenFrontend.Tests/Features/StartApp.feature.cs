@@ -19,7 +19,7 @@ namespace BeerDrivenFrontend.Tests.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class PresentationTestsFeature : object, Xunit.IClassFixture<PresentationTestsFeature.FixtureData>, System.IDisposable
+    public partial class StartupTestsFeature : object, Xunit.IClassFixture<StartupTestsFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace BeerDrivenFrontend.Tests.Features
 #line 1 "StartApp.feature"
 #line hidden
         
-        public PresentationTestsFeature(PresentationTestsFeature.FixtureData fixtureData, BeerDrivenFrontend_Tests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public StartupTestsFeature(StartupTestsFeature.FixtureData fixtureData, BeerDrivenFrontend_Tests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace BeerDrivenFrontend.Tests.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Presentation Tests", "A short summary of the feature", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Startup Tests", "A short summary of the feature", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,7 +81,7 @@ namespace BeerDrivenFrontend.Tests.Features
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="App successfully started")]
-        [Xunit.TraitAttribute("FeatureTitle", "Presentation Tests")]
+        [Xunit.TraitAttribute("FeatureTitle", "Startup Tests")]
         [Xunit.TraitAttribute("Description", "App successfully started")]
         [Xunit.TraitAttribute("Category", "StartupApplication")]
         public void AppSuccessfullyStarted()
@@ -114,12 +114,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                PresentationTestsFeature.FeatureSetup();
+                StartupTestsFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                PresentationTestsFeature.FeatureTearDown();
+                StartupTestsFeature.FeatureTearDown();
             }
         }
     }
