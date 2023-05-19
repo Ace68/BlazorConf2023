@@ -15,22 +15,13 @@
 <hr/>
 <MudAlert>@Message</MudAlert>
 
-@if (IsLoading)
-{
-	<div style="display:flex; gap:10px; justify-content:center; align-items:center">
-		<div class="loader"></div>
-	</div>
-}
-else
-{
-	<div hidden="@HideGrid">
-		<PubsGrid Beers="@Beers"></PubsGrid>
-	</div>
+<div hidden="@HideGrid">
+	<PubsGrid Beers="@Beers"></PubsGrid>
+</div>
 
-	<div hidden="@HideDetails">
-		<SalesOrderDetails SalesOrder="@SalesOrder"
-		                   Beers="@Beers"
-		                   Customers="@Customers"
-		                   Warehouses="@Warehouses"></SalesOrderDetails>		
-	</div>
-}
+<div hidden="@HideDetails">
+	<SalesOrderDetails SalesOrder="@SalesOrder"
+	                   Beers="@Beers"
+	                   Customers="@Customers"
+	                   Warehouses="@Warehouses"></SalesOrderDetails>		
+</div>
