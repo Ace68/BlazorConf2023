@@ -3,9 +3,34 @@
 
 @using MudBlazor
 @using BeerDrivenFrontend.Modules.Pubs.Components
+@using BeerDrivenFrontend.Modules.Shared
+@using BeerDrivenFrontend.Shared.Enums
 
-<PubsToolbar></PubsToolbar>
+<div hidden="@HideGrid">
+	<GridToolbar ModuleName="ModuleNames.Pubs" />
+</div>
+<div hidden="@HideDetails">
+	<DetailsToolbar ModuleName="ModuleNames.Pubs" />
+</div>
 <hr/>
 <MudAlert>@Message</MudAlert>
 
-<PubsGrid Beers="@Beers"></PubsGrid>
+@if (IsLoading)
+{
+	<div style="display:flex; gap:10px; justify-content:center; align-items:center">
+		<div class="loader"></div>
+	</div>
+}
+else
+{
+	<div hidden="@HideGrid">
+		<PubsGrid Beers="@Beers"></PubsGrid>
+	</div>
+
+	<div hidden="@HideDetails">
+		<SalesOrderDetails SalesOrder="@SalesOrder"
+		                   Beers="@Beers"
+		                   Customers="@Customers"
+		                   Warehouses="@Warehouses"></SalesOrderDetails>		
+	</div>
+}

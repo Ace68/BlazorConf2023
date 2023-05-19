@@ -21,7 +21,7 @@ public class PubsGridBase : ComponentBase, IDisposable
 
 	protected Task RowClickEvent(TableRowClickEventArgs<BeerJson> tableRowClickEventArgs)
 	{
-		return Bus.Publish(new BrewUpEvent($"Beer selected {tableRowClickEventArgs.Item.BeerType}", string.Empty));
+		return Bus.Publish(new BrewUpEvent($"Beer selected {tableRowClickEventArgs.Item.BeerName}", string.Empty));
 	}
 
 	protected string SelectedRowClassFunc(BeerJson element, int rowNumber)

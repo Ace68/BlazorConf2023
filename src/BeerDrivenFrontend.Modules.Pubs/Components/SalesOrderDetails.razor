@@ -1,0 +1,61 @@
+﻿@inherits SalesOrderDetailsBase
+
+@using MudBlazor
+@using Microsoft.AspNetCore.Components
+@using BeerDrivenFrontend.Modules.Shared.Extensions.Dtos
+
+<EditForm Model="@SalesOrder" OnValidSubmit="OnValidSubmit">
+	<DataAnnotationsValidator/>
+	<MudGrid>
+		<MudItem xs="12" sm="12">
+			<MudCard>
+				<MudCardContent Class="mud-theme-primary">
+					<MudText Typo="Typo.h4">Sales Order</MudText>
+				</MudCardContent>
+			</MudCard>
+		</MudItem>
+		<MudItem xs="12" sm="4">
+			<MudCard>
+				<MudCardContent>
+					<MudTextField T="string" Label="Number"
+					              @bind-Value="SalesOrder.OrderNumber" For="@(() => SalesOrder.OrderNumber)" 
+					              RequiredError="Order Number is Mandatory!" Variant="Variant.Text"/>
+				</MudCardContent>
+			</MudCard>
+		</MudItem>
+		<MudItem xs="12" sm="4">
+			<MudCard>
+				<MudCardContent>
+					<MudDatePicker Label="Date" Editable="true" @bind-Date="SalesOrder.OrderDate" />
+				</MudCardContent>
+			</MudCard>
+		</MudItem>
+		<MudItem xs="12" sm="4">
+			<MudCard>
+				<MudCardContent>
+					<MudNumericField Label="Total Amount" ReadOnly="true" Required="true" RequiredError="Order Number is Mandatory!"
+					                 @bind-Value="SalesOrder.TotalAmount" For="@(() => SalesOrder.TotalAmount)" />
+				</MudCardContent>
+			</MudCard>
+		</MudItem>
+		
+		<MudItem xs="12" sm="6">
+			<MudSelect T="CustomerJson" Label="Customer"
+							   @bind-Value="CurrentCustomer" Required="true" RequiredError="Customer is Mandatory!">
+				@foreach (var customer in Customers)
+				{
+					<MudSelectItem Value="@(customer)">@customer.CustomerName</MudSelectItem>
+				}
+			</MudSelect>
+		</MudItem>
+		<MudItem xs="12" sm="6">
+			<MudSelect T="WarehouseJson" Label="Warehouse"
+			           @bind-Value="CurrentWarehouse" Required="true" RequiredError="Warehouse is Mandatory!">
+				@foreach (var warehouse in Warehouses)
+				{
+					<MudSelectItem Value="@(warehouse)">@warehouse.WarehouseName</MudSelectItem>
+				}
+			</MudSelect>
+		</MudItem>
+	</MudGrid>
+</EditForm>

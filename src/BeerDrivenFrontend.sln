@@ -31,11 +31,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B007A27E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerDrivenFrontend.Tests", "BeerDrivenFrontend.Tests\BeerDrivenFrontend.Tests.csproj", "{799D2CC0-CD2F-4D4C-AA02-D47BAC957845}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerDrivenFrontend.Modules.Pubs.FitnessTests", "BeerDrivenFrontend.Modules.Pubs.FitnessTests\BeerDrivenFrontend.Modules.Pubs.FitnessTests.csproj", "{DC5A61C4-BF1F-484F-A019-C79718F9B5B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerDrivenFrontend.Modules.Pubs.FitnessTests", "BeerDrivenFrontend.Modules.Pubs.FitnessTests\BeerDrivenFrontend.Modules.Pubs.FitnessTests.csproj", "{DC5A61C4-BF1F-484F-A019-C79718F9B5B3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerDrivenFrontend.Client", "BeerDrivenFrontend\Client\BeerDrivenFrontend.Client.csproj", "{9D28353C-7FD5-4590-9E06-B2998614CCD7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerDrivenFrontend.Server", "BeerDrivenFrontend\Server\BeerDrivenFrontend.Server.csproj", "{B561D14D-D589-4D8C-BC27-5897CD214367}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{50070ACB-A619-463D-BF29-E8E8D4B90AAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerDrivenFrontend.Modules.Shared", "BeerDrivenFrontend.Modules.Shared\BeerDrivenFrontend.Modules.Shared.csproj", "{38EE2F3B-9ED1-499C-AD31-57A2A384E5BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerDrivenFrontend.Modules.Shared.Extensions", "BeerDrivenFrontend.Modules.Shared.Extensions\BeerDrivenFrontend.Modules.Shared.Extensions.csproj", "{7A234381-8059-4CC8-96B1-00D80002A554}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +89,14 @@ Global
 		{B561D14D-D589-4D8C-BC27-5897CD214367}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B561D14D-D589-4D8C-BC27-5897CD214367}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B561D14D-D589-4D8C-BC27-5897CD214367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38EE2F3B-9ED1-499C-AD31-57A2A384E5BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38EE2F3B-9ED1-499C-AD31-57A2A384E5BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38EE2F3B-9ED1-499C-AD31-57A2A384E5BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38EE2F3B-9ED1-499C-AD31-57A2A384E5BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A234381-8059-4CC8-96B1-00D80002A554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A234381-8059-4CC8-96B1-00D80002A554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A234381-8059-4CC8-96B1-00D80002A554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A234381-8059-4CC8-96B1-00D80002A554}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +116,9 @@ Global
 		{DC5A61C4-BF1F-484F-A019-C79718F9B5B3} = {6C5F60D3-174B-4153-8B5E-FD972BD64B43}
 		{9D28353C-7FD5-4590-9E06-B2998614CCD7} = {A8EA16B8-5628-4FF4-A6CD-9FBD807C7DA6}
 		{B561D14D-D589-4D8C-BC27-5897CD214367} = {A8EA16B8-5628-4FF4-A6CD-9FBD807C7DA6}
+		{50070ACB-A619-463D-BF29-E8E8D4B90AAD} = {4036A992-B217-4A79-8C24-457760094D80}
+		{38EE2F3B-9ED1-499C-AD31-57A2A384E5BE} = {50070ACB-A619-463D-BF29-E8E8D4B90AAD}
+		{7A234381-8059-4CC8-96B1-00D80002A554} = {50070ACB-A619-463D-BF29-E8E8D4B90AAD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC25E182-BE2B-494B-A90B-9FC35FFAA941}

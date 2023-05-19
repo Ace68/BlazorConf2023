@@ -1,0 +1,17 @@
+﻿@inherits GridToolbarBase
+@using MudBlazor
+@using BeerDrivenFrontend.Shared.Enums
+
+<MudPaper Elevation="25">
+	<MudToolBar>
+		<MudTooltip Text="Add New Element">
+			<MudIconButton Icon="@Icons.Material.Outlined.Add" OnClick="() => OnToolbarClick(ToolbarElement.Add)"/>
+		</MudTooltip>
+		<MudTooltip Text="Edit Current Element">
+			<MudIconButton Icon="@Icons.Material.Outlined.Edit" OnClick="() => OnToolbarClick(ToolbarElement.Edit)"/>
+		</MudTooltip>
+		<MudTooltip Text="Back to HomePage">
+			<MudIconButton Icon="@Icons.Material.Outlined.ArrowBack" OnClick="() => OnToolbarClick(ToolbarElement.Close)" />
+		</MudTooltip>
+	</MudToolBar>
+</MudPaper>

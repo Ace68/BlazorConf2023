@@ -20,8 +20,29 @@ internal sealed class BeerService : BaseHttpService, IBeerService
 	{
 		try
 		{
-			return await HttpService.Get<IEnumerable<BeerJson>>(
-				$"{AppConfiguration.PubsApiUri}v1/pubs/beers");
+			var beers = new List<BeerJson>
+			{
+				new()
+				{
+					BeerId = Guid.NewGuid().ToString(),
+					BeerName = "Muflone IPA",
+					Quantity = 10
+				},
+				new()
+				{
+					BeerId = Guid.NewGuid().ToString(),
+					BeerName = "Muflone Weiss",
+					Quantity = 5
+				},
+				new()
+				{
+					BeerId = Guid.NewGuid().ToString(),
+					BeerName = "Muflone RED",
+					Quantity = 30
+				}
+			};
+
+			return await Task.FromResult(beers);
 		}
 		catch (Exception ex)
 		{

@@ -1,0 +1,20 @@
+﻿@inherits DetailsToolbarBase
+@using MudBlazor
+@using BeerDrivenFrontend.Shared.Enums
+
+<MudPaper Elevation="25">
+	<MudToolBar>
+		<MudTooltip Text="Clear All">
+			<MudIconButton Icon="@Icons.Material.Outlined.ClearAll" OnClick="() => OnToolbarClick(ToolbarElement.ClearAll)"/>
+		</MudTooltip>
+		<MudTooltip Text="SaveOptions Data">
+			<MudIconButton Icon="@Icons.Material.Outlined.Save" OnClick="() => OnToolbarClick(ToolbarElement.Save)"/>
+		</MudTooltip>
+		<MudTooltip Text="Delete">
+			<MudIconButton Icon="@Icons.Material.Outlined.Delete" OnClick="() => OnToolbarClick(ToolbarElement.Delete)"/>
+		</MudTooltip>
+		<MudTooltip Text="Back To List">
+			<MudIconButton Icon="@Icons.Material.Outlined.ArrowBack" OnClick="() => OnToolbarClick(ToolbarElement.Back)"/>
+		</MudTooltip>
+	</MudToolBar>
+</MudPaper>
