@@ -3,15 +3,15 @@
 @using BeerDrivenFrontend.Shared.Enums
 
 <MudPaper Elevation="25">
-	<MudToolBar>
+	<MudToolBar id="grid-toolbar">
 		<MudTooltip Text="Add New Element">
-			<MudIconButton Icon="@Icons.Material.Outlined.Add" OnClick="() => OnToolbarClick(ToolbarElement.Add)"/>
+			<MudIconButton Icon="@Icons.Material.Outlined.Add" OnClick="() => OnToolbarClick(ToolbarElement.Add)" id="add-button"/>
 		</MudTooltip>
 		<MudTooltip Text="Edit Current Element">
-			<MudIconButton Icon="@Icons.Material.Outlined.Edit" OnClick="() => OnToolbarClick(ToolbarElement.Edit)"/>
+			<MudIconButton Icon="@Icons.Material.Outlined.Edit" OnClick="() => OnToolbarClick(ToolbarElement.Edit)" id="edit-button" />
 		</MudTooltip>
 		<MudTooltip Text="Back to HomePage">
-			<MudIconButton Icon="@Icons.Material.Outlined.ArrowBack" OnClick="() => OnToolbarClick(ToolbarElement.Close)" />
+			<MudIconButton Icon="@Icons.Material.Outlined.ArrowBack" OnClick="() => OnToolbarClick(ToolbarElement.Close)" id="close-button" />
 		</MudTooltip>
 	</MudToolBar>
 </MudPaper>
