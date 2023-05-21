@@ -4,15 +4,14 @@ using OpenQA.Selenium.Chrome;
 namespace BeerDrivenFrontend.Modules.Pubs.Tests.StepDefinitions;
 
 [Binding]
-public class ClickAddOrderButtonStepDefinitions
+public class ClickBackToGridButtonStepDefinitions
 {
 	private IWebDriver Driver { get; set; }
 	private const string Url = "https://beerblazor.azurewebsites.net/";
 
-	private IWebElement _pubsGrid;
-	private IWebElement _gridToolbar;
 	private IWebElement _addButton;
-	private IWebElement _salesOrderGrid;
+	private IWebElement _backToListButton;
+	private IWebElement _pubsGrid;
 
 	[BeforeScenario]
 	public void BeforeScenario()
@@ -27,31 +26,29 @@ public class ClickAddOrderButtonStepDefinitions
 		Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 	}
 
-	[Given(@"The user is landed on pubs page and view pubs-grid and grid-toolbar")]
-	public void GivenTheUserIsLandedOnPubsPageAndViewPubs_GridAndGrid_Toolbar()
+	[Given(@"The user is landed on salesorder page and view salesorder-grid and details-toolbar")]
+	public void GivenTheUserIsLandedOnSalesorderPageAndViewSalesorder_GridAndDetails_Toolbar()
 	{
 		Driver.Navigate().GoToUrl($"{Url}pubs");
 		Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
-		_gridToolbar = Driver.FindElement(By.Id("grid-toolbar"));
-		_pubsGrid = Driver.FindElement(By.Id("pubs-grid"));
 		_addButton = Driver.FindElement(By.Id("add-button"));
-	}
-
-	[When(@"The user clicks on add-button")]
-	public void WhenTheUserClicksOnAdd_Button()
-	{
 		_addButton.SendKeys("Add New Element");
+
+		_backToListButton = Driver.FindElement(By.Id("backToList-button"));
 	}
 
-	[Then(@"The user is landed on sales-order page")]
-	public void ThenTheUserIsLandedOnSales_OrderPage()
+	[When(@"The user clicks on backToList-button")]
+	public void WhenTheUserClicksOnBackToList_Button()
 	{
-		Assert.True(_gridToolbar != null);
-		Assert.True(_pubsGrid != null);
+		_backToListButton.SendKeys("Back To List");
+	}
 
-		_salesOrderGrid = Driver.FindElement(By.Id("salesorder-grid"));
-		Assert.True(_salesOrderGrid != null);
+	[Then(@"The user is landed on pubs page")]
+	public void ThenTheUserIsLandedOnPubsPage()
+	{
+		_pubsGrid = Driver.FindElement(By.Id("pubs-grid"));
+		Assert.True(_pubsGrid != null);
 	}
 
 	[AfterScenario]
