@@ -14,6 +14,11 @@ public class StartAppStepDefinition : IDisposable
 		var chromeOptions = new ChromeOptions();
 		chromeOptions.AddArguments("headless");
 		Driver = new ChromeDriver(Environment.CurrentDirectory, chromeOptions);
+	}
+
+	[When(@"User navigate to the home page")]
+	public void WhenUserNavigateToTheHomePage()
+	{
 		Driver.Navigate().GoToUrl(Url);
 		Driver.Manage().Window.Maximize();
 		Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
@@ -24,6 +29,12 @@ public class StartAppStepDefinition : IDisposable
 	{
 		var navMenu = Driver.FindElement(By.Id("navmenu"));
 		Assert.True(navMenu != null);
+	}
+
+	[AfterScenario]
+	public void AfterScenario()
+	{
+		Driver.Quit();
 	}
 
 	#region Dispose
