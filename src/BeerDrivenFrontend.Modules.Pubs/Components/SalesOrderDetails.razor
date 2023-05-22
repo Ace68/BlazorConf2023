@@ -17,9 +17,9 @@
 		<MudItem xs="12" sm="4">
 			<MudCard>
 				<MudCardContent>
-					<MudTextField T="string" Label="Number"
+					<MudTextField T="string" Label="Number" id="order-number"
 					              @bind-Value="SalesOrder.OrderNumber" For="@(() => SalesOrder.OrderNumber)" 
-					              RequiredError="Order Number is Mandatory!" Variant="Variant.Text"/>
+					              RequiredError="Order Number is Mandatory!" Variant="Variant.Text" />
 				</MudCardContent>
 			</MudCard>
 		</MudItem>

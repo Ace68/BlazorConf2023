@@ -1,5 +1,6 @@
 ﻿using BeerDrivenFrontend.Modules.Pubs.Extensions.Abstracts;
 using BeerDrivenFrontend.Modules.Pubs.Extensions.Dtos;
+using BeerDrivenFrontend.Modules.Pubs.Extensions.Messages;
 using BeerDrivenFrontend.Modules.Shared.Extensions.Abstracts;
 using BeerDrivenFrontend.Modules.Shared.Extensions.Dtos;
 using BeerDrivenFrontend.Shared.Enums;
@@ -33,6 +34,7 @@ public class PubsBase : ComponentBase, IDisposable
 	protected override async Task OnInitializedAsync()
 	{
 		Bus.Subscribe<ToolbarElementClicked>(ToolbarEventHandler);
+		Bus.Subscribe<SalesOrderDetailsSubmitted>(SaveSalesOrderCommandHandler);
 
 		await LoadBeersAsync();
 		await LoadCustomersAsync();
@@ -72,7 +74,7 @@ public class PubsBase : ComponentBase, IDisposable
 			SalesOrder = new SalesOrderJson
 			{
 				OrderId = Guid.NewGuid().ToString(),
-				OrderNumber = $"{DateTime.UtcNow.Year:0000}{DateTime.UtcNow.Month:00}{DateTime.UtcNow.Day:00}-01",
+				OrderNumber = string.Empty,
 				OrderDate = DateTime.UtcNow,
 				TotalAmount = 0
 			};
@@ -98,6 +100,26 @@ public class PubsBase : ComponentBase, IDisposable
 
 		if (@event.ToolbarElement.Equals(ToolbarElement.Close))
 			NavigationManager.NavigateTo("/");
+
+		StateHasChanged();
+	}
+
+	private void SaveSalesOrderCommandHandler(MessageArgs args)
+	{
+		var @event = args.GetMessage<SalesOrderDetailsSubmitted>();
+		SalesOrder = @event.SalesOrder;
+
+		if (string.IsNullOrEmpty(SalesOrder.OrderNumber))
+		{
+			Message = "Order Number is Mandatory!";
+		}
+		else
+		{
+			Message = string.Empty;
+
+			HideGrid = false;
+			HideDetails = true;
+		}
 
 		StateHasChanged();
 	}

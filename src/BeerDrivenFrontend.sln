@@ -39,9 +39,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerDrivenFrontend.Server",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{50070ACB-A619-463D-BF29-E8E8D4B90AAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerDrivenFrontend.Modules.Shared", "BeerDrivenFrontend.Modules.Shared\BeerDrivenFrontend.Modules.Shared.csproj", "{38EE2F3B-9ED1-499C-AD31-57A2A384E5BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerDrivenFrontend.Modules.Shared", "BeerDrivenFrontend.Modules.Shared\BeerDrivenFrontend.Modules.Shared.csproj", "{38EE2F3B-9ED1-499C-AD31-57A2A384E5BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerDrivenFrontend.Modules.Shared.Extensions", "BeerDrivenFrontend.Modules.Shared.Extensions\BeerDrivenFrontend.Modules.Shared.Extensions.csproj", "{7A234381-8059-4CC8-96B1-00D80002A554}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerDrivenFrontend.Modules.Shared.Extensions", "BeerDrivenFrontend.Modules.Shared.Extensions\BeerDrivenFrontend.Modules.Shared.Extensions.csproj", "{7A234381-8059-4CC8-96B1-00D80002A554}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CE5337E5-224A-4BA5-B254-42E9023EB960}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +121,7 @@ Global
 		{50070ACB-A619-463D-BF29-E8E8D4B90AAD} = {4036A992-B217-4A79-8C24-457760094D80}
 		{38EE2F3B-9ED1-499C-AD31-57A2A384E5BE} = {50070ACB-A619-463D-BF29-E8E8D4B90AAD}
 		{7A234381-8059-4CC8-96B1-00D80002A554} = {50070ACB-A619-463D-BF29-E8E8D4B90AAD}
+		{CE5337E5-224A-4BA5-B254-42E9023EB960} = {B98ED102-5B6B-4AB8-BF7A-47B9813C15AF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC25E182-BE2B-494B-A90B-9FC35FFAA941}

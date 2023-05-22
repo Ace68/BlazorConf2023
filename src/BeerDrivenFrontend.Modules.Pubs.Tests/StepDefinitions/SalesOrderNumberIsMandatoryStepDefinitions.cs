@@ -4,14 +4,14 @@ using OpenQA.Selenium.Chrome;
 namespace BeerDrivenFrontend.Modules.Pubs.Tests.StepDefinitions;
 
 [Binding]
-public class ClickBackToGridButtonStepDefinitions
+public class SalesOrderNumberIsMandatoryStepDefinitions
 {
 	private IWebDriver Driver { get; set; }
 	private const string Url = "https://beerblazor.azurewebsites.net/";
 
 	private IWebElement _addButton;
-	private IWebElement _backToListButton;
-	private IWebElement _pubsGrid;
+	private IWebElement _saveButton;
+	private IWebElement _alertMessage;
 
 	[BeforeScenario]
 	public void BeforeScenario()
@@ -26,8 +26,8 @@ public class ClickBackToGridButtonStepDefinitions
 		Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 	}
 
-	[Given(@"The user is landed on salesorder page and view salesorder-grid and details-toolbar")]
-	public void GivenTheUserIsLandedOnSalesorderPageAndViewSalesorder_GridAndDetails_Toolbar()
+	[Given(@"User is on the sales order page")]
+	public void GivenUserIsOnTheSalesOrderPage()
 	{
 		Driver.Navigate().GoToUrl($"{Url}pubs");
 		Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
@@ -35,20 +35,22 @@ public class ClickBackToGridButtonStepDefinitions
 		_addButton = Driver.FindElement(By.Id("add-button"));
 		_addButton.Click();
 
-		_backToListButton = Driver.FindElement(By.Id("backToList-button"));
+		_saveButton = Driver.FindElement(By.Id("save-button"));
 	}
 
-	[When(@"The user clicks on backToList-button")]
-	public void WhenTheUserClicksOnBackToList_Button()
+	[When(@"User tries to save the sales order")]
+	public void WhenUserTriesToSaveTheSalesOrder()
 	{
-		_backToListButton.SendKeys("Back To List");
+		_saveButton.Click();
+		Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 	}
 
-	[Then(@"The user is landed on pubs page")]
-	public void ThenTheUserIsLandedOnPubsPage()
+	[Then(@"User is shown an error message if the sales order number is missing")]
+	public void ThenUserIsShownAnErrorMessageIfTheSalesOrderNumberIsMissing()
 	{
-		_pubsGrid = Driver.FindElement(By.Id("pubs-grid"));
-		Assert.True(_pubsGrid != null);
+		_alertMessage = Driver.FindElement(By.Id("alert-message"));
+
+		Assert.Equal("Order Number is Mandatory!", _alertMessage.Text);
 	}
 
 	[AfterScenario]

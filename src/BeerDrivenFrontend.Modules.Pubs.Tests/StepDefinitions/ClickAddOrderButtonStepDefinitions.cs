@@ -41,7 +41,7 @@ public class ClickAddOrderButtonStepDefinitions
 	[When(@"The user clicks on add-button")]
 	public void WhenTheUserClicksOnAdd_Button()
 	{
-		_addButton.SendKeys("Add New Element");
+		_addButton.Click();
 	}
 
 	[Then(@"The user is landed on sales-order page")]

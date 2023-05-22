@@ -4,14 +4,15 @@ using OpenQA.Selenium.Chrome;
 namespace BeerDrivenFrontend.Modules.Pubs.Tests.StepDefinitions;
 
 [Binding]
-public class ClickBackToGridButtonStepDefinitions
+public class SalesOrderNumberIsFilledStepDefinitions
 {
 	private IWebDriver Driver { get; set; }
 	private const string Url = "https://beerblazor.azurewebsites.net/";
 
 	private IWebElement _addButton;
-	private IWebElement _backToListButton;
-	private IWebElement _pubsGrid;
+	private IWebElement _saveButton;
+	private IWebElement _alertMessage;
+	private IWebElement _orderNumber;
 
 	[BeforeScenario]
 	public void BeforeScenario()
@@ -26,8 +27,8 @@ public class ClickBackToGridButtonStepDefinitions
 		Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 	}
 
-	[Given(@"The user is landed on salesorder page and view salesorder-grid and details-toolbar")]
-	public void GivenTheUserIsLandedOnSalesorderPageAndViewSalesorder_GridAndDetails_Toolbar()
+	[Given(@"User navigate to SalesOrder page")]
+	public void GivenUserNavigateToSalesOrderPage()
 	{
 		Driver.Navigate().GoToUrl($"{Url}pubs");
 		Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
@@ -35,20 +36,24 @@ public class ClickBackToGridButtonStepDefinitions
 		_addButton = Driver.FindElement(By.Id("add-button"));
 		_addButton.Click();
 
-		_backToListButton = Driver.FindElement(By.Id("backToList-button"));
+		_saveButton = Driver.FindElement(By.Id("save-button"));
 	}
 
-	[When(@"The user clicks on backToList-button")]
-	public void WhenTheUserClicksOnBackToList_Button()
+	[When(@"User fills OrderNumber")]
+	public void WhenUserFillsOrderNumber()
 	{
-		_backToListButton.SendKeys("Back To List");
+		_orderNumber = Driver.FindElement(By.Id("order-number"));
+		_orderNumber.SendKeys($"{DateTime.UtcNow.Year:0000}{DateTime.UtcNow.Month:00}{DateTime.UtcNow.Day:00}-01");
 	}
 
-	[Then(@"The user is landed on pubs page")]
-	public void ThenTheUserIsLandedOnPubsPage()
+	[Then(@"User click on save-button")]
+	public void ThenUserClickOnSave_Button()
 	{
-		_pubsGrid = Driver.FindElement(By.Id("pubs-grid"));
-		Assert.True(_pubsGrid != null);
+		_saveButton.Click();
+		Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+
+		_alertMessage = Driver.FindElement(By.Id("alert-message"));
+		Assert.Equal(string.Empty, _alertMessage.Text);
 	}
 
 	[AfterScenario]
