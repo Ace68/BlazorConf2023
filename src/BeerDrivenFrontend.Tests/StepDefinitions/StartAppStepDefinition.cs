@@ -4,7 +4,7 @@ using OpenQA.Selenium.Chrome;
 namespace BeerDrivenFrontend.Tests.StepDefinitions;
 
 [Binding]
-public class StartAppStepDefinition : IDisposable
+public class StartAppStepDefinition
 {
 	private IWebDriver Driver { get; }
 	private const string Url = "https://beerblazor.azurewebsites.net/";
@@ -14,10 +14,16 @@ public class StartAppStepDefinition : IDisposable
 		var chromeOptions = new ChromeOptions();
 		chromeOptions.AddArguments("headless");
 		Driver = new ChromeDriver(Environment.CurrentDirectory, chromeOptions);
+	}
+
+	[When(@"The user starts the application")]
+	public void WhenTheUserStartsTheApplication()
+	{
 		Driver.Navigate().GoToUrl(Url);
 		Driver.Manage().Window.Maximize();
 		Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 	}
+
 
 	[Then(@"The navbar is loaded")]
 	public void ThenTheNavbarIsLoaded()
@@ -26,23 +32,9 @@ public class StartAppStepDefinition : IDisposable
 		Assert.True(navMenu != null);
 	}
 
-	#region Dispose
-	public void Dispose(bool disposing)
+	[AfterScenario]
+	public void AfterScenario()
 	{
-		if (disposing)
-		{
-			Driver.Quit();
-		}
+		Driver.Quit();
 	}
-	public void Dispose()
-	{
-		Dispose(true);
-		GC.SuppressFinalize(this);
-	}
-
-	~StartAppStepDefinition()
-	{
-		Dispose(false);
-	}
-	#endregion
 }

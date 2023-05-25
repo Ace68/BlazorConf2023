@@ -19,7 +19,7 @@ namespace BeerDrivenFrontend.Tests.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class NavmenuTestsFeature : object, Xunit.IClassFixture<NavmenuTestsFeature.FixtureData>, System.IDisposable
+    public partial class NavbarItemsSuccessfulLoadedFeature : object, Xunit.IClassFixture<NavbarItemsSuccessfulLoadedFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace BeerDrivenFrontend.Tests.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "NavbarElementsLoaded.feature"
+#line 1 "NavbarItemsSuccessfulLoaded.feature"
 #line hidden
         
-        public NavmenuTestsFeature(NavmenuTestsFeature.FixtureData fixtureData, BeerDrivenFrontend_Tests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public NavbarItemsSuccessfulLoadedFeature(NavbarItemsSuccessfulLoadedFeature.FixtureData fixtureData, BeerDrivenFrontend_Tests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace BeerDrivenFrontend.Tests.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Navmenu Tests", "A short summary of the feature", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "NavbarItemsSuccessfulLoaded", "A short summary of the feature", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,16 +80,19 @@ namespace BeerDrivenFrontend.Tests.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Navbar successflully rendered")]
-        [Xunit.TraitAttribute("FeatureTitle", "Navmenu Tests")]
-        [Xunit.TraitAttribute("Description", "Navbar successflully rendered")]
-        [Xunit.TraitAttribute("Category", "NavbarSuccessfullyRendered")]
-        public void NavbarSuccessflullyRendered()
+        [Xunit.SkippableFactAttribute(DisplayName="When the user landed on home page, the navbar elements should be loaded successfu" +
+            "lly")]
+        [Xunit.TraitAttribute("FeatureTitle", "NavbarItemsSuccessfulLoaded")]
+        [Xunit.TraitAttribute("Description", "When the user landed on home page, the navbar elements should be loaded successfu" +
+            "lly")]
+        [Xunit.TraitAttribute("Category", "NavbarElementsSuccessfulLoaded")]
+        public void WhenTheUserLandedOnHomePageTheNavbarElementsShouldBeLoadedSuccessfully()
         {
             string[] tagsOfScenario = new string[] {
-                    "NavbarSuccessfullyRendered"};
+                    "NavbarElementsSuccessfulLoaded"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navbar successflully rendered", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When the user landed on home page, the navbar elements should be loaded successfu" +
+                    "lly", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -101,7 +104,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
- testRunner.Then("The elements into navbar are successflully loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("The user navigated to the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 8
+ testRunner.When("The user landed on the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 9
+ testRunner.Then("The navbar elements should be loaded successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -114,12 +123,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                NavmenuTestsFeature.FeatureSetup();
+                NavbarItemsSuccessfulLoadedFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                NavmenuTestsFeature.FeatureTearDown();
+                NavbarItemsSuccessfulLoadedFeature.FeatureTearDown();
             }
         }
     }
