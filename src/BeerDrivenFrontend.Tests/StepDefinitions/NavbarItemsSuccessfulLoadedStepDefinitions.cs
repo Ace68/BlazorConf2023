@@ -32,8 +32,8 @@ public class NavbarItemsSuccessfulLoadedStepDefinitions
 	public void WhenTheUserLandedOnTheHomePage()
 	{
 		_navMenu = Driver.FindElement(By.Id("navmenu"));
-		_navMenuProductionItem = _navMenu.FindElement(By.LinkText("Production"));
-		_navMenuPubsItem = _navMenu.FindElement(By.LinkText("Pubs"));
+		_navMenuProductionItem = _navMenu.FindElement(By.Id("production-link"));
+		_navMenuPubsItem = _navMenu.FindElement(By.Id("pubs-link"));
 	}
 
 	[Then(@"The navbar elements should be loaded successfully")]
