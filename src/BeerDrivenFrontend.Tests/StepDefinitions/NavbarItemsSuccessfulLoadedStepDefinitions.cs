@@ -10,8 +10,8 @@ public class NavbarItemsSuccessfulLoadedStepDefinitions
 	private const string Url = "https://beerblazor.azurewebsites.net/";
 
 	private IWebElement _navMenu { get; set; }
-	private IReadOnlyCollection<IWebElement> _navMenuProductionItem { get; set; }
-	private IReadOnlyCollection<IWebElement> _navMenuPubsItem { get; set; }
+	private IWebElement _navMenuProductionItem { get; set; }
+	private IWebElement _navMenuPubsItem { get; set; }
 
 	public NavbarItemsSuccessfulLoadedStepDefinitions()
 	{
@@ -32,8 +32,8 @@ public class NavbarItemsSuccessfulLoadedStepDefinitions
 	public void WhenTheUserLandedOnTheHomePage()
 	{
 		_navMenu = Driver.FindElement(By.Id("navmenu"));
-		_navMenuProductionItem = _navMenu.FindElements(By.LinkText("Production"));
-		_navMenuPubsItem = _navMenu.FindElements(By.LinkText("Pubs"));
+		_navMenuProductionItem = _navMenu.FindElement(By.LinkText("Production"));
+		_navMenuPubsItem = _navMenu.FindElement(By.LinkText("Pubs"));
 	}
 
 	[Then(@"The navbar elements should be loaded successfully")]
