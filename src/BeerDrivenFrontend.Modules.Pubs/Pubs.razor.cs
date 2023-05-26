@@ -94,6 +94,7 @@ public class PubsBase : ComponentBase, IDisposable
 
 		if (@event.ToolbarElement.Equals(ToolbarElement.Back))
 		{
+			Message = string.Empty;
 			HideGrid = false;
 			HideDetails = true;
 		}
