@@ -17,7 +17,8 @@ public class NavbarItemsSuccessfulLoadedStepDefinitions
 	{
 		var chromeOptions = new ChromeOptions();
 		chromeOptions.AddArguments("headless");
-		Driver = new ChromeDriver(Environment.CurrentDirectory, chromeOptions);
+		//Driver = new ChromeDriver(Environment.CurrentDirectory, chromeOptions);
+		Driver = new ChromeDriver(Environment.CurrentDirectory);
 	}
 
 	[Given(@"The user navigated to the home page")]

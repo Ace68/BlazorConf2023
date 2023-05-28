@@ -45,6 +45,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerDrivenFrontend.Modules.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CE5337E5-224A-4BA5-B254-42E9023EB960}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerDrivenFrontend.Modules.Production.Tests", "BeerDrivenFrontend.Modules.Production.Tests\BeerDrivenFrontend.Modules.Production.Tests.csproj", "{9445B0CC-E5C2-460B-BE25-20E12C56EDEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{7A234381-8059-4CC8-96B1-00D80002A554}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A234381-8059-4CC8-96B1-00D80002A554}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A234381-8059-4CC8-96B1-00D80002A554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9445B0CC-E5C2-460B-BE25-20E12C56EDEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9445B0CC-E5C2-460B-BE25-20E12C56EDEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9445B0CC-E5C2-460B-BE25-20E12C56EDEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9445B0CC-E5C2-460B-BE25-20E12C56EDEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,6 +128,7 @@ Global
 		{38EE2F3B-9ED1-499C-AD31-57A2A384E5BE} = {50070ACB-A619-463D-BF29-E8E8D4B90AAD}
 		{7A234381-8059-4CC8-96B1-00D80002A554} = {50070ACB-A619-463D-BF29-E8E8D4B90AAD}
 		{CE5337E5-224A-4BA5-B254-42E9023EB960} = {B98ED102-5B6B-4AB8-BF7A-47B9813C15AF}
+		{9445B0CC-E5C2-460B-BE25-20E12C56EDEF} = {CE5337E5-224A-4BA5-B254-42E9023EB960}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC25E182-BE2B-494B-A90B-9FC35FFAA941}
